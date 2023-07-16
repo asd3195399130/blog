@@ -11,18 +11,36 @@ export default defineUserConfig({
     // 默认主题配置
     navbar: [
       {
-        text: '二段课程',
-        link: '/guide/二段.md',
+        text: '课程大纲',
+        children: [
+          {
+            text: '一段课程',
+            link: '/guide/一段.md',
+          },
+          {
+            text: '二段课程',
+            link: '/guide/二段.md',
+          }, {
+            text: '三段课程',
+            link: '/guide/三段.md',
+          },
+          {
+            text: '四段课程',
+            link: '/guide/四段.md',
+          }, {
+            text: '五段课程',
+            link: '/guide/五段.md',
+          },
+          {
+            text: '六段课程',
+            link: '/guide/六段.md',
+          },
+          {
+            text: '毕业课程',
+            link: '/guide/毕业段.md',
+          },
+        ],
         activeMatch: '/'
-
-      },
-      {
-        text: '三段课程',
-        link: '/guide/三段.md',
-      },
-      {
-        text: '四段课程',
-        link: '/guide/四段.md',
       },
       {
         text: 'Tools',
