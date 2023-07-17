@@ -8,6 +8,9 @@ export default defineUserConfig({
   head: [['link', { rel: 'icon', type: "x-icon", href: '/images/ikun.ico' }]],
   pagePatterns: ['**/*.md', '!**/README.md', '!.vuepress', '!node_modules'],
   theme: defaultTheme({
+    home: '../index.md',
+    colorModeSwitch: true,
+    sidebarDepth: 2,
     // 默认主题配置
     navbar: [
       {
@@ -29,7 +32,7 @@ export default defineUserConfig({
             link: '/guide/四段.md',
           }, {
             text: '五段课程',
-            link: '/guide/五段.md',
+            link: '/guide/五段/目录.md',
           },
           {
             text: '六段课程',
