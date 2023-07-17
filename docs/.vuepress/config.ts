@@ -1,5 +1,7 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from 'vuepress'
+import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
+
 export default defineUserConfig({
   base: '/blog/',
   lang: 'zh-CN',
@@ -7,6 +9,9 @@ export default defineUserConfig({
   description: '大纲涵盖二段三段四段60天课程',
   head: [['link', { rel: 'icon', type: "x-icon", href: '/images/ikun.ico' }]],
   pagePatterns: ['**/*.md', '!**/README.md', '!.vuepress', '!node_modules'],
+  plugins: [
+    backToTopPlugin(),
+  ],
   theme: defaultTheme({
     home: '../index.md',
     colorModeSwitch: true,
@@ -50,5 +55,6 @@ export default defineUserConfig({
         link: '/guide/tools.md',
       },
     ],
-  }),
+
+  })
 })
