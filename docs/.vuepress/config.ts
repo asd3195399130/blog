@@ -9,13 +9,13 @@ export default defineUserConfig({
   description: '大纲涵盖二段三段四段60天课程',
   head: [['link', { rel: 'icon', type: "x-icon", href: '/images/ikun.ico' }]],
   pagePatterns: ['**/*.md', '!**/README.md', '!.vuepress', '!node_modules'],
+
   plugins: [
     backToTopPlugin(),
   ],
   theme: defaultTheme({
-    home: '../index.md',
+    home: '/index.md',
     colorModeSwitch: true,
-    sidebarDepth: 2,
     // 默认主题配置
     navbar: [
       {
