@@ -11,6 +11,9 @@ sidebarDepth: 1
 *Js高级/Jquery*
 ## [四段课程](./guide/四段/目录.md)
 *Js插件/工具/生态*
+### **第一周**
+[Git](../guide/四段/Git.md)<br>
+[nodejs](../guide/四段/Nodejs.md)
 ## [五段课程](./guide/五段/目录.md)
 *Vue框架2.0/3.0*
 ### **第一周**
