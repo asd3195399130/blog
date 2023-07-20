@@ -7,7 +7,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'JavaScript 课程大纲',
   description: '大纲涵盖二段三段四段60天课程',
-  head: [['link', { rel: 'icon', type: "x-icon", href: '/images/ikun.ico' }]],
+  head: [['link', { rel: 'icon', type: "x-icon", href: '../images/ikun.ico' }]],
   pagePatterns: ['**/*.md', '!**/README.md', '!.vuepress', '!node_modules'],
 
   plugins: [
