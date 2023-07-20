@@ -20,11 +20,10 @@ sidebarDepth: 1
 [课程介绍](../guide/五段/课程介绍.md)<br> 
 [vue发展史](../guide/五段/课程介绍.html#vue发展史)<br> 
 [框架简介](../guide/五段/课程介绍.html#二-框架简介)<br>
-[官方文档](../五段/guide/课程介绍.html#三-官方文档)<br>
-[基本使用](../guide/五段/基本使用.md)<br> 
 [安装&引入](../guide/五段/基本使用.md#安装&引入)<br> 
 [helloVue](../guide/五段/基本使用.md#helloVue)<br>
 [模板语法](../guide/五段/基本使用.md#模版语法)<br>
+[数据绑定](../guide/五段/基本使用.md#数据绑定)<br>
 [计算属性](../guide/五段/基本使用.md#)<br>
 ### **第二周**
 ### **第三周**
