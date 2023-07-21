@@ -23,29 +23,29 @@ export default defineUserConfig({
         children: [
           {
             text: '一段课程',
-            link: '/guide/一段.md',
+            link: '/index.md#一段课程',
           },
           {
             text: '二段课程',
-            link: '/guide/二段.md',
+            link: '/index.md#二段课程',
           }, {
             text: '三段课程',
-            link: '/guide/三段.md',
+            link: '/index.md#三段课程',
           },
           {
             text: '四段课程',
-            link: '/guide/四段.md',
+            link: '/index.md#四段课程',
           }, {
             text: '五段课程',
-            link: '/guide/五段/目录.md',
+            link: '/index.md#五段课程',
           },
           {
             text: '六段课程',
-            link: '/guide/六段.md',
+            link: '/index.md#六段课程',
           },
           {
             text: '毕业课程',
-            link: '/guide/毕业段.md',
+            link: '/index.md#毕业课程',
           },
         ],
         activeMatch: '/'

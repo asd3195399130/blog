@@ -337,7 +337,7 @@ app.post("/home",(req,res) => {
 })
 ```
 
-ajax发起请求时 数据类型为：application/x-www-form-urlencoded
+ajax发起请求时 数据类型为：application/x-www-form-urlencoded<br>
 3. 路由参数获取
 
 ```javascript
