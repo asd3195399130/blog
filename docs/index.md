@@ -5,7 +5,7 @@ sidebarDepth: 1
 
 ## [一段课程](./guide/一段.md)
 *Ps/HTML/CSS*
-## [二段课程](./guide/二段.md)
+## [二段课程](./guide/二段/二段.md)
 *JavaScript基础*
 ## [三段课程](./guide/三段.md)
 *Js高级/Jquery*
