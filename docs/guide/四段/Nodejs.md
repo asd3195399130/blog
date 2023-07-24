@@ -385,7 +385,7 @@ module.exports = app
 ```
 
 ### 七、连接mysql数据库
-
+在项目根目录创建一个dataBase文件夹,此文件夹用于存放操作数据库的文件
 ```javascript
   //config.js
   module.exports = {
@@ -406,41 +406,41 @@ const config = require("./config").db;
 //连接数据库
 module.exports = mysql.createConnection(config);
 ```
-在api.js中定义操作数据库的方法
+接下来根据业务需要定义相关模块的数据库操作方法
+例如 创建一个Car.js汽车的数据相关操作
 connection.query():
-
 第一个参数：sql语句 — 字符串
 第二个参数：参数值 — 数组
 第三个参数：操作数据库之后执行的回调函数 (err：查询错误，data：查询结果) — function
 注意：第二个参数可以没有，既当不需要任何参数时，我们可以不传；如果回调函数中的 err 为 null ，则操作数据库成功
 增删改查：
 ```javascript
-// api.js
+// Car.js
 const connection = require('./db')
 
 //查询
-const getAccount = () => {
+const getCar = () => {
   return new Promise((resolve, reject) => {
     //第一个参数：sql语句
     //第二个参数：回调函数（err：查询错误，data：查询结果）
-    connection.query("select * from account",(err,data) => {
+    connection.query("select * from Car",(err,data) => {
       resolve(data)
     })
   })
 }
 //添加
-const insertAccount = (param) => {
+const insertCar = (param) => {
   return new Promise((resolve,reject) => {
-    connection.query("insert into account(username,phone,password) values(?,?,?)",param,(err,data) => {
+    connection.query("insert into Car(name,color) values(?,?)",[param.name,param.color],(err,data) => {
       //如果err为null则成功
       resolve(data)
     })
   })
 }
 //改
-const updateAccount = (param) => {
+const updateCar = (param) => {
   return new Promise((resolve,reject) => {
-    connection.query("update account set username = ? where phone = ?",param,(err,data) => {
+    connection.query("update car set username = ? where phone = ?",param,(err,data) => {
       //如果err为null则成功
       resolve(data)
     })
@@ -448,62 +448,60 @@ const updateAccount = (param) => {
 }
 
 //删除
-const deleteAccount = (param) => {
+const deleteCar = (param) => {
   return new Promise((resolve,reject) => {
-    connection.query("delete from account where id = ?",param,(err,data) => {
+    connection.query("delete from car where id = ?",param,(err,data) => {
       resolve(data)
     })
   })
 }
 //导出方法，在需要使用到的模块中导入
 module.exports = {
-  getAccount,
-  insertAccount,
-  updateAccount,
-  deleteAccount
+  getCar,
+  insertCar,
+  updateCar,
+  deleteCar
 }
 ```
-在接口中调用操作数据库的方法：
+在汽车控制器方法中调用操作数据库的方法：
+在项目根目录下创建Controller文件夹,此文件夹用来存放控制器文件
 ```javascript
-/data.js
-// 记得在app.js中配置
-
-
+//CarController.js
 const express = require('express')
 
 //创建服务器
 const app = express.Router()
 
-const {getAccount,insertAccount,updateAccount,deleteAccount} = require('../dataBase/api')
+const {getCar,insertCar,updateCar,deleteCar} = require('../dataBase/Car')
 
-app.get("/get_account",(req,res,next) => {
-  getAccount()
+app.get("/getCar",(req,res,next) => {
+  getCar()
   .then(response => {
     res.send(response)
   })
 })
 
-app.post("/insert_account",(req,res,next) => {
+app.post("/insertCar",(req,res,next) => {
   let param = req.body
   let {username,phone,password} = param
-  insertAccount([username,phone,password])
+  insertCar([username,phone,password])
   .then(response => {
     res.send(response)
   })
 })
 
-app.post("/update_account",(req,res,next) => {
+app.post("/updateCar",(req,res,next) => {
   let param = req.body
   let {username,phone} = param
-  updateAccount([username,phone])
+  updateCar([username,phone])
   .then(response => {
     res.send(response)
   })
 })
 
-app.get("/delete_account",(req,res,next) => {
+app.get("/deleteCar",(req,res,next) => {
   let id = req.query.id
-  deleteAccount([id])
+  deleteCar([id])
   .then(response => {
     res.send(response)
   })
