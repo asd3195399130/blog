@@ -12,6 +12,7 @@ export default defineUserConfig({
 
   plugins: [
     backToTopPlugin(),
+
   ],
   theme: defaultTheme({
     home: '/index.md',
