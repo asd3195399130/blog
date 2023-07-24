@@ -385,6 +385,10 @@ module.exports = app
 ```
 
 ### 七、连接mysql数据库
+安装mysql扩展
+```bash
+npm install mysql
+```
 在项目根目录创建一个dataBase文件夹,此文件夹用于存放操作数据库的文件
 ```javascript
   //config.js
@@ -508,6 +512,39 @@ app.get("/deleteCar",(req,res,next) => {
 })
 
 module.exports = app
+```
+在routes文件夹 新建相关模块路由js文件  
+::: tip carRouter.js
+```javascript
+var express = require('express');
+var router = express.Router();
+//引入控制器文件
+var carController = require('../controller/carController')
+
+//相对于的路径访问相对于控制器的方法
+router.get('/',carController.getCarList );
+
+module.exports = router;
+:::
+在app.js中添加路由
+```javascript
+var carRouter = require('./routes/carRoute');
+app.use('/users', usersRouter);
+```
+解决跨域访问
+```javascript
+//app.js
+//解决跨域访问
+app.all("*", function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,Content-Type,Authorization,token"
+  );
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
 ```
 ### 八、暴露静态文件
 在app.js中配置：
