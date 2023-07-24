@@ -14,7 +14,7 @@ sidebarDepth: 1
 ### **第一周**
 [Git](../guide/四段/Git.md)<br>
 [nodejs](../guide/四段/Nodejs.md)
-## [五段课程](./guide/五段/目录.md)
+## [五段课程](./guide/五段/课程介绍.md)
 *Vue框架2.0/3.0*  
 [课程介绍](../guide/五段/课程介绍.md)<br> 
 [vue发展史](../guide/五段/课程介绍.html#vue发展史)<br> 
