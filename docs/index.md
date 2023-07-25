@@ -6,12 +6,13 @@ sidebarDepth: 1
 ## [一段课程](./guide/一段.md)
 *Ps/HTML/CSS*
 ## [二段课程](./guide/二段/二段.md)
-*JavaScript基础*
+*JavaScript基础*  
+[基础语法](./guide/二段/基础语法.md)  
+[Dom对象](./guide/二段/Dom对象.md)  
 ## [三段课程](./guide/三段.md)
 *Js高级/Jquery*
 ## [四段课程](./guide/四段/目录.md)
-*Js插件/工具/生态*
-### **第一周**
+*Js插件/工具/生态*  
 [Git](../guide/四段/Git.md)<br>
 [nodejs](../guide/四段/Nodejs.md)
 ## [五段课程](./guide/五段/课程介绍.md)
